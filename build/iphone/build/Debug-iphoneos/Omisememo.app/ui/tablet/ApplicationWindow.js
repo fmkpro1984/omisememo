@@ -1,0 +1,1 @@
+/Users/fmkpro1984/Documents/Titanium_Studio_Workspace/Omisememo/Resources/ui/tablet/ApplicationWindow.js
