@@ -10,16 +10,60 @@
  */
 
 var win = Ti.UI.createWindow();
-var view = Ti.UI.createView({backgroundColor:"#999999", width: 320, height: 480});
+var view = Ti.UI.createView({backgroundColor:"#eee", width: 320, height: 480});
 win.add(view);
 
+var label1 = Ti.UI.createLabel({
+	color: '#333',
+	font: { fontSize: 20 },
+	text: 'お店の名前とメモ',
+	top: 30,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+})
+win.add(label1);
+
+
+var textArea = Ti.UI.createTextArea({
+	borderWidth: 2,
+	borderColor: '#666',
+	borderRadius: 5,
+	color: '#888',
+	font: {fontSize:20, fontweight:'normal'},
+	returnKeyType: Ti.UI.RETURNKEY_GO,
+	textAlign: 'left',
+	top: 60,
+	width:300,
+	height: 200,
+});
+win.add(textArea);
+
+var button = Ti.UI.createButton({
+	title: '保存する',
+	top: 300,
+	width: 200,
+	height: 50,
+});
+win.add(button);
+
+var button_allview = Ti.UI.createButton({
+	title: '一覧をみる',
+	top: 370,
+	width: 200,
+	height: 50,
+})
+win.add(button_allview);
+
+/*
 var view2 = Ti.UI.createView({backgroundColor:"#AA2222", borderRadius:10, width: 280, height: 360});
 win.add(view2);
+*/
 
-var webview = Titanium.UI.createWebView({url:'http://www.google.com/', width: 320, height: 100});
-win.add(webview);
 win.open();
 
+/*
+var webview = Titanium.UI.createWebView({url:'http://www.google.com/', width: 320, height: 100});
+win.add(webview);
 /*
 
 //bootstrap and check dependencies
