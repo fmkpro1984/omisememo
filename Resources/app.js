@@ -38,13 +38,23 @@ var textArea = Ti.UI.createTextArea({
 });
 win.add(textArea);
 
-var button = Ti.UI.createButton({
+var button_save = Ti.UI.createButton({
 	title: '保存する',
 	top: 300,
 	width: 200,
 	height: 50,
 });
-win.add(button);
+
+button_save.addEventListener ('click', function(){ 
+	var dialog = Ti.UI.createAlertDialog({
+		message: '保存したよん',
+		ok: 'OK',
+		title: 'グッジョブ！',
+	});
+	dialog.show();
+});
+
+win.add(button_save);
 
 var button_allview = Ti.UI.createButton({
 	title: '一覧をみる',
