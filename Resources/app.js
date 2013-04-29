@@ -62,6 +62,18 @@ var button_allview = Ti.UI.createButton({
 	width: 200,
 	height: 50,
 })
+
+button_allview.addEventListener ('click', function(){
+	var win2 = Ti.UI.createWindow ();
+	var view2 = Ti.UI.createView({backgroundColor: "#EEE", width: 320, height: 480,});
+	win2.add(view2);
+	var closeButton = Ti.UI.createButton({title: '閉じる'});
+	closeButton.addEventListener('click', function() {
+    	win2.close();
+	});
+	win2.rightNavButton = closeButton;
+	win2.open({modal: true});
+});
 win.add(button_allview);
 
 /*
