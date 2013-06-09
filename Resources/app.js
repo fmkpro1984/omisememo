@@ -67,6 +67,17 @@ button_allview.addEventListener ('click', function(){
 	var win2 = Ti.UI.createWindow ();
 	var view2 = Ti.UI.createView({backgroundColor: "#EEE", width: 320, height: 480,});
 	win2.add(view2);
+	var rows = [
+		{title:'Row 1', hasChild:true},
+		{title:'Row 2', hasChild:true},
+		{title:'Row 3', hasChild:true},
+		{title:'Row 4', hasChild:true}
+	];
+	var tableview = Titanium.UI.createTableView({
+    	data: rows
+	});
+	win2.add(tableview);
+	
 	var closeButton = Ti.UI.createButton({title: '閉じる'});
 	closeButton.addEventListener('click', function() {
     	win2.close();
