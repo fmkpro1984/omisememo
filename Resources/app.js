@@ -26,6 +26,18 @@ var label1 = Ti.UI.createLabel({
 })
 win.add(label1);
 
+var textField = Ti.UI.createTextField({
+	borderWidth: 2,
+	borderColor: '#666',
+	borderRadius: 5,
+	color: '#888',
+	font: {fontSize:20, fontweight:'normal'},
+	top: 60,
+	width: 300,
+	backgroundColor: '#FFF',
+	height: 40,
+});
+win.add(textField);
 
 var textArea = Ti.UI.createTextArea({
 	borderWidth: 2,
@@ -35,7 +47,7 @@ var textArea = Ti.UI.createTextArea({
 	font: {fontSize:20, fontweight:'normal'},
 	returnKeyType: Ti.UI.RETURNKEY_GO,
 	textAlign: 'left',
-	top: 60,
+	top: 110,
 	width:300,
 	height: 200,
 });
@@ -43,7 +55,7 @@ win.add(textArea);
 
 var button_save = Ti.UI.createButton({
 	title: '保存する',
-	top: 300,
+	top: 340,
 	width: 200,
 	height: 50,
 });
@@ -55,7 +67,7 @@ button_save.addEventListener ('click', function(){
 		title: 'グッジョブ！',
 	});
 	console.log(textArea.value);
-	rows.push({title:textArea.value, hasChild:true});
+	rows.push({title:textField.value, hasChild:true});
 	console.log(rows);
 	
 	
@@ -70,7 +82,7 @@ win.add(button_save);
 
 var button_allview = Ti.UI.createButton({
 	title: '一覧をみる',
-	top: 370,
+	top: 390,
 	width: 200,
 	height: 50,
 })
