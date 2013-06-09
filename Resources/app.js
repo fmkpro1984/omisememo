@@ -67,14 +67,8 @@ button_save.addEventListener ('click', function(){
 		title: 'グッジョブ！',
 	});
 	console.log(textArea.value);
-	rows.push({title:textField.value, hasChild:true});
+	rows.push({title:textField.value, content:textArea.value, hasChild:true});
 	console.log(rows);
-	
-	
-	
-	
-	
-	
 	dialog.show();
 });
 
@@ -89,12 +83,19 @@ var button_allview = Ti.UI.createButton({
 
 button_allview.addEventListener ('click', function(){
 	var win2 = Ti.UI.createWindow ();
-	var view2 = Ti.UI.createView({backgroundColor: "#EEE", width: 320, height: 480,});
-	win2.add(view2);
 	var tableview = Titanium.UI.createTableView({
     	data: rows
 	});
+	tableview.addEventListener("click", function(e) {
+  		console.log(e.rowData.content);
+  		console.log("テーブルビューがタップされたよー");
+  		
+  		
+	});
+	
 	win2.add(tableview);
+	
+
 	
 	var closeButton = Ti.UI.createButton({title: '閉じる'});
 	closeButton.addEventListener('click', function() {
