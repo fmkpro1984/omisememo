@@ -9,10 +9,14 @@
  *  
  */
 
+var tabGroup = Ti.UI.createTabGroup();
+
 var rows = [
 ];
 	
 var win = Ti.UI.createWindow();
+win.hideTabBar();
+var tab = Ti.UI.createTab ({window:win});
 var view = Ti.UI.createView({backgroundColor:"#eee", width: 320, height: 480});
 win.add(view);
 
@@ -86,23 +90,23 @@ button_allview.addEventListener ('click', function(){
 	var tableview = Titanium.UI.createTableView({
     	data: rows
 	});
-	tableview.addEventListener("click", function(e) {
+		tableview.addEventListener("click", function(e) {
   		console.log(e.rowData.content);
   		console.log("テーブルビューがタップされたよー");
-  		
-  		
+  		var win3 = Ti.UI.createWindow ();
+  		var detailview = Ti.UI.createView({backgroundColor:"#eee", width: 320, height: 480});
+  		win3.add(detailview);
+  		tab.open(win3);
 	});
-	
-	win2.add(tableview);
-	
 
+win2.add(tableview);	
 	
 	var closeButton = Ti.UI.createButton({title: '閉じる'});
 	closeButton.addEventListener('click', function() {
     	win2.close();
 	});
 	win2.rightNavButton = closeButton;
-	win2.open({modal: true});
+	tab.open(win2);
 });
 win.add(button_allview);
 
@@ -111,7 +115,8 @@ var view2 = Ti.UI.createView({backgroundColor:"#AA2222", borderRadius:10, width:
 win.add(view2);
 */
 
-win.open();
+tabGroup.addTab(tab);
+tabGroup.open();
 
 /*
 var webview = Titanium.UI.createWebView({url:'http://www.google.com/', width: 320, height: 100});
