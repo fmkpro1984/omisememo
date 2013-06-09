@@ -9,6 +9,9 @@
  *  
  */
 
+var rows = [
+];
+	
 var win = Ti.UI.createWindow();
 var view = Ti.UI.createView({backgroundColor:"#eee", width: 320, height: 480});
 win.add(view);
@@ -51,6 +54,15 @@ button_save.addEventListener ('click', function(){
 		ok: 'OK',
 		title: 'グッジョブ！',
 	});
+	console.log(textArea.value);
+	rows.push({title:textArea.value, hasChild:true});
+	console.log(rows);
+	
+	
+	
+	
+	
+	
 	dialog.show();
 });
 
@@ -67,12 +79,6 @@ button_allview.addEventListener ('click', function(){
 	var win2 = Ti.UI.createWindow ();
 	var view2 = Ti.UI.createView({backgroundColor: "#EEE", width: 320, height: 480,});
 	win2.add(view2);
-	var rows = [
-		{title:'Row 1', hasChild:true},
-		{title:'Row 2', hasChild:true},
-		{title:'Row 3', hasChild:true},
-		{title:'Row 4', hasChild:true}
-	];
 	var tableview = Titanium.UI.createTableView({
     	data: rows
 	});
