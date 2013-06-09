@@ -90,14 +90,24 @@ button_allview.addEventListener ('click', function(){
 	var tableview = Titanium.UI.createTableView({
     	data: rows
 	});
-		tableview.addEventListener("click", function(e) {
+	tableview.addEventListener("click", function(e) {
   		console.log(e.rowData.content);
   		console.log("テーブルビューがタップされたよー");
   		var win3 = Ti.UI.createWindow ();
   		var detailview = Ti.UI.createView({backgroundColor:"#eee", width: 320, height: 480});
   		win3.add(detailview);
+  		var memolabel = Ti.UI.createLabel({
+			color: '#333',
+			font: { fontSize: 20 },
+			text: e.rowData.content,
+			backgroundColor:'#CCC',
+			top: 30,
+			width: 300,
+			height: 480,
+		})
+		win3.add(memolabel);
   		tab.open(win3);
-	});
+  	});
 
 win2.add(tableview);	
 	
